@@ -165,7 +165,10 @@ class _normalState extends State<normal> {
                                       ),
                                     ),
                                     child: Text(
-                                      "LEVEL ${(myindex * 10) + index + 1} - 18s",
+                                      (leval[(myindex * 10) + index + 1] ==
+                                              "win")
+                                          ? "LEVEL ${(myindex * 10) + index + 1} - ${dashboard.preferences!.getInt("nsecond${(myindex * 10) + index + 1}")}"
+                                          : "LEVEL ${(myindex * 10) + index + 1}",
                                       style: TextStyle(
                                         color: Colors.grey[200],
                                         fontSize: 18,

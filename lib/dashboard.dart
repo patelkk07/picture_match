@@ -14,15 +14,25 @@ class dashboard extends StatefulWidget {
 }
 
 class _dashboardState extends State<dashboard> {
+  // List l_index = [];
+  // int a = 0;
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     get_pref();
+    // l_index = List.filled(l_index.length, 0);
+    // for (int i = 0; i < l_index.length; i++) {
+    //   l_index[i] = dashboard.preferences!.getInt("index${i}") ?? 0;
+    //   a = i;
+    //   setState(() {});
+    // }
   }
 
   get_pref() async {
     dashboard.preferences = await SharedPreferences.getInstance();
+
   }
 
   @override

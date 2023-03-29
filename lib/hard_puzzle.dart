@@ -304,6 +304,8 @@ class _hard_puzzleState extends State<hard_puzzle> {
                                         onPressed: () {
                                           dashboard.preferences!.setString(
                                               "Hard${widget.c_index}", "win");
+                                          dashboard.preferences!.setInt(
+                                              "hsecond${widget.c_index}", a);
                                           Navigator.push(
                                             context,
                                             MaterialPageRoute(
@@ -322,7 +324,7 @@ class _hard_puzzleState extends State<hard_puzzle> {
                         }
                       } else {
                         Future.delayed(
-                          Duration(milliseconds: 500),
+                          Duration(milliseconds: 400),
                         ).then((value) {
                           temp[pos1] = false;
                           temp[pos2] = false;

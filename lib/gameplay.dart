@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:picture_match/dashboard.dart';
 import 'package:picture_match/lavel_screen.dart';
+import 'package:stop_watch_timer/stop_watch_timer.dart';
 
 class gameplay extends StatefulWidget {
   int c_index;
@@ -20,6 +21,8 @@ class _gameplayState extends State<gameplay> {
   List<bool> temp = [];
   int a = 5, x = 1, pos1 = 0, pos2 = 0;
   int cnt = 0;
+
+  StopWatchTimer? stopWatchTimer;
 
   @override
   void initState() {
@@ -228,6 +231,11 @@ class _gameplayState extends State<gameplay> {
                                           dashboard.preferences!.setString(
                                               "levelno${widget.c_index}",
                                               "win");
+                                          dashboard.preferences!.setInt(
+                                              "second${widget.c_index}", a);
+                                          dashboard.preferences!.setInt(
+                                              "index",
+                                              widget.c_index);
                                           Navigator.push(
                                             context,
                                             MaterialPageRoute(
@@ -247,7 +255,7 @@ class _gameplayState extends State<gameplay> {
                         }
                       } else {
                         Future.delayed(
-                          Duration(milliseconds: 500),
+                          Duration(milliseconds: 400),
                         ).then((value) {
                           temp[pos1] = false;
                           temp[pos2] = false;
